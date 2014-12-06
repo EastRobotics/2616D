@@ -16,3 +16,24 @@ void basicLift (int power) {
 void basicIntake (int power) {
 	motor[intake] = power;
 }
+
+/**Potentionmeter-Based Arm**/
+void liftPot(int power, int angle){
+	if(power != 0)			//Adds ability to stop arm motor using this function
+	{
+		//Runs arm at specified power until it reaches desired potentiometer postition
+		if(SensorValue[armPot] > angle)
+		{
+			while(SensorValue[armPot] > angle){
+				basicLift(power);
+			}
+		}
+		else
+		{
+			while(SensorValue[armPot] < angle){
+				basicLift(power);
+			}
+		}
+	}
+	basicLift(0);		//Stops arm after position is reached
+}

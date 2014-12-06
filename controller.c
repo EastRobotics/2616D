@@ -6,8 +6,8 @@ void controller() {
 	while(true) {
 
 		//Drive
-		if (vexRT[Btn6DXmtr2]) slowDrive = true;
-		else if (vexRT[Btn6UXmtr2]) slowDrive = false;
+		// if (vexRT[Btn6DXmtr2]) slowDrive = true;
+		// else if (vexRT[Btn6UXmtr2]) slowDrive = false;
 
 		driveNoStall(
 			slowDrive ? (vexRT[Ch3] / 2.2) : vexRT[Ch3],
@@ -32,5 +32,9 @@ void controller() {
 			if (abs(vexRT[Ch2Xmtr2]) >= 10) basicIntake(-(vexRT[Ch2Xmtr2]));
 			else basicIntake(0);
 		}
+
+		//Skyrise
+		if (vexRT[Btn6UXmtr2]) SensorValue[skyrisePneumatics] = 0;
+		else if (vexRT[Btn6DXmtr2]) SensorValue[skyrisePneumatics] = 1;
 	}
 }
