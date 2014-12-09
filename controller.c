@@ -22,7 +22,7 @@ void controller() {
 			else if (vexRT[Btn7UXmtr2]) basicLift(70);
 			else if (vexRT[Btn7DXmtr2]) basicLift(-25);
 			else if (vexRT[Btn5UXmtr2]) basicLift(20);
-			else basicLift(0);
+			else basicLift(30);
 		}
 
 		//Intake
