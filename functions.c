@@ -1,6 +1,6 @@
 void basicDrive (int leftPower, int rightPower) {
-	motor[driveLeft1] = motor[driveLeft2] = leftPower;
-	motor[driveRight1] = motor[driveRight2] = rightPower;
+	motor[driveLeft] = leftPower;
+	motor[driveRight] = rightPower;
 }
 
 void driveNoStall (int leftPower, int rightPower, int stallPower) {
