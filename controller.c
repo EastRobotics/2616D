@@ -48,11 +48,13 @@ void controller() {
 			while(vexRT[Btn5DXmtr2]) {
 				SensorValue[skyriseLeft] = 1;
 			}
-		} 
+		}
 		else {
 			while(vexRT[Btn5DXmtr2]) {
 				SensorValue[skyriseLeft] = 0;
-			}	
+			}
 		}
+
+		wait1Msec(10);
 	}
 }

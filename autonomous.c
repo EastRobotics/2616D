@@ -1,6 +1,126 @@
 #include "functions.c"
 
-void ourAutonomous() {
+void redAuton() {
+	resetAll(200);
+
+	//Drive to 1st cube
+	encoderDrive(100,350);
+	resetDriveEncoders(400);
+
+	//Intake
+	timedIntake (-127, 1000);
+
+	//Drive to post
+	encoderDrive(100,1200);
+	resetDriveEncoders(400);
+
+	//Lift
+	liftPot(100, 2600);
+	wait1Msec(400);
+
+	//Spin to post
+	//basicDrive(-90, 80);
+	//wait1Msec(650);
+	//drive(0);
+	//resetDriveEncoders(400);
+
+	spin(305, 50);
+	drive(0);
+	resetDriveEncoders(400);
+
+	//Drive back a bit
+	drive(0);
+	wait1Msec(100);
+	drive(0);
+
+	//Outtake
+	timedIntake(127, 3000);
+
+	//Drive back
+	encoderDrive(60,-200);
+	resetDriveEncoders(400);
+
+	//Lift Down
+	liftPot(127, 1000);
+	wait1Msec(400);
+
+	//Spin to cube
+	basicDrive(-80, 80);
+	wait1Msec(500);
+	drive(0);
+
+	//Intake
+	timedIntake(127, 500);
+
+	encoderDrive(60,-2000);
+	resetDriveEncoders(400);
+
+}
+
+void blueAuton() {
+	resetAll(200);
+
+	//Drive to 1st cube
+	encoderDrive(100,350);
+	resetDriveEncoders(400);
+
+	//Intake
+	timedIntake (-127, 1000);
+
+	//Drive to post
+	encoderDrive(100,1200);
+	resetDriveEncoders(400);
+
+	//Lift
+	liftPot(100, 2600);
+	wait1Msec(400);
+
+	//Spin to post
+	//basicDrive(-90, 80);
+	//wait1Msec(650);
+	//drive(0);
+	//resetDriveEncoders(400);
+
+	spin(-305, 50);
+	drive(0);
+	resetDriveEncoders(400);
+
+	//Drive back a bit
+	drive(0);
+	wait1Msec(100);
+	drive(0);
+
+	//Outtake
+	timedIntake(127, 3000);
+
+	//Drive back
+	encoderDrive(60,-200);
+	resetDriveEncoders(400);
+
+	//Lift Down
+	liftPot(127, 1000);
+	wait1Msec(400);
+
+	//Spin to cube
+	basicDrive(-80, 80);
+	wait1Msec(500);
+	drive(0);
+
+	//Intake
+	timedIntake(127, 500);
+
+	encoderDrive(60,-2000);
+	resetDriveEncoders(400);
+}
+
+void otherAuton() {
+	resetAll(200);
+
+	//Drive back
+	encoderDrive(100, -80);
+	resetDriveEncoders(400);
+
+	//Spin to post
 	basicDrive(100, 100);
 	wait1Msec(500);
 	basicDrive(0, 0);
@@ -16,64 +136,4 @@ void ourAutonomous() {
 	basicIntake(-127);
 	wait1Msec(800);
 	basicDrive(0, 0);
-
-	// //*******AUTON*******//
-
-	// //Pneumatics 
-	// SensorValue[skyriseRight] = SensorValue[skyriseLeft] = 1; 
-
-	// //Drive Back
-	// basicDrive(-100, -100);
-	// wait1Msec(500);
-	// basicDrive(0, 0);
-	// wait1Msec(500);
-
-	// //Turn
-	// basicDrive(80, -80);
-	// wait1Msec(300);
-	// basicDrive(0, 0);
-
-	// //Lift
-	// basicLift(100);
-	// wait1Msec(400);
-	// basicLift(0);
-
-	// //Drive forward
-	// basicDrive(70, 70);
-	// wait1Msec(70);
-	// basicDrive(0, 0);
-	// wait1Msec(500);
-
-	// //Outtake
-	// basicIntake(100);
-	// wait1Msec(1000);
-
-	// //Drive back
-	// basicDrive(-100, -100);
-	// wait1Msec(500);
-	// basicDrive(0, 0);
-	// wait1Msec(500);
-
-	// //Turn
-	// basicDrive(-100, 100);
-	// wait1Msec(2000);
-	// basicDrive(0, 0);
-
-	// //Return
-	// basicDrive(100, 100);
-	// wait1Msec(700);
-	// basicDrive(0, 0);
-	// wait1Msec(200);
-
-	// //Outtake
-	// basicIntake(127);
-	// wait1Msec(1000);
-	// basicIntake(0);
-
-	// //Drive back
-	// basicDrive(-100, -100);
-	// wait1Msec(500);
-	// basicDrive(0, 0);
-
-
 }
